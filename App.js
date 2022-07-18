@@ -2,7 +2,6 @@ import React from 'react';
 import { StyleSheet, Text, View, Image } from 'react-native';
 import {createAppContainer} from 'react-navigation';
 import {createBottomTabNavigator} from 'react-navigation-tabs' 
-import WriteComplaint from './screens/WriteComplaint'
 import ReadComplaint from './screens/ReadComplaint'
 import {SafeAreaProvider} from 'react-native-safe-area-context';
 
@@ -25,16 +24,7 @@ const TabNavigator = createBottomTabNavigator({
     tabBarIcon: ()=>{
       const routeName = navigation.state.routeName;
       console.log(routeName)
-      if(routeName === "WriteComplaint"){
-        return(
-          <Image
-          source={require("./assets/complaint.webp")}
-          style={{width:40, height:40}}
-        />
-        )
-        
-      }
-      else if(routeName === "ReadComplaint"){
+      if(routeName === "ReadComplaint"){
         return(
           <Image
           source={require("./assets/readC.png")}
